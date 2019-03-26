@@ -5,5 +5,5 @@ class CombinationModule {
     uchar comb(uchar, uchar);
 
     public:
-    void combine(cv::Mat&, cv::Mat&, std::string&);
+    cv::Mat combine(cv::Mat&, cv::Mat&, std::string&);
 };

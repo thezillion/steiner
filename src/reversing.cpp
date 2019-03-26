@@ -10,7 +10,7 @@ uchar ReversingModule::rev(uchar x) {
     return x<<4;
 }
 
-void ReversingModule::reverse(Mat& input, std::string& outpath) {
+Mat ReversingModule::reverse(Mat& input, std::string& outpath) {
     Mat reverse(input.rows, input.cols, CV_8UC3, Scalar(255, 255, 255));
     Vec3b intensity_result;
 
@@ -25,4 +25,5 @@ void ReversingModule::reverse(Mat& input, std::string& outpath) {
     }
 
     imwrite(outpath, reverse);
+    return reverse;
 }

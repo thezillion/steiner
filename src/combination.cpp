@@ -9,7 +9,7 @@ uchar CombinationModule::comb(uchar x, uchar y) {
     return (x & rzeros) + (y>>4);
 }
 
-void CombinationModule::combine(Mat& img1, Mat& img2, std::string& outpath) {
+Mat CombinationModule::combine(Mat& img1, Mat& img2, std::string& outpath) {
     Vec3b intensity1, intensity2;
 
     Mat result(img1.rows, img1.cols, CV_8UC3, Scalar(255, 255, 255));
@@ -26,4 +26,5 @@ void CombinationModule::combine(Mat& img1, Mat& img2, std::string& outpath) {
     }
 
     imwrite(outpath, result);
+    return result;
 }
